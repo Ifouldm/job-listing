@@ -1,11 +1,15 @@
 <template>
-    App
+    <Home />
 </template>
 
 <script>
+import Home from './views/Home.vue';
+
 export default {
     name: 'App',
-    components: {},
+    components: {
+        Home,
+    },
 };
 </script>
 
