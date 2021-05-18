@@ -1,5 +1,5 @@
 <template>
-    <div class="badge">
+    <div class="badge" @click="$emit('addFilter', label)">
         {{ label }}
     </div>
 </template>
@@ -10,17 +10,19 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .badge {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline;
     font-weight: bold;
     color: #ffffff;
     font-size: 0.5rem;
     margin: 0 0.3rem;
-    padding: 0.2rem 0.3rem;
+    padding: 0.3rem 0.3rem;
     border-radius: 1rem;
     background-color: var(--DesaturatedDarkCyan);
+}
+
+.black {
+    background-color: #000000;
 }
 </style>

@@ -1,20 +1,38 @@
 <template>
     <div class="filters">
-        Filters
+        <div class="filter-labels">
+            <Label
+                v-for="filter of filters"
+                :label="filter"
+                :key="filter"
+                removable
+                @click="$emit('removeFilter', filter)"
+            />
+        </div>
+        <a href="#" @click.prevent="$emit('clear')">Clear</a>
     </div>
 </template>
 
 <script>
-export default {};
+import Label from './Label.vue';
+export default {
+    props: ['filters'],
+    components: {
+        Label,
+    },
+};
 </script>
 
 <style>
 .filters {
-    padding: 2rem;
-    margin: 5rem 2rem 2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    margin: -1rem 2rem 2rem 2rem;
     border-radius: 0.3rem;
     background-color: #ffffff;
-    box-shadow: 0.5rem 0.5rem 0.5rem hsla(180, 29%, 50%, 0.2);
+    box-shadow: var(--BoxShadow);
     display: flex;
 }
 </style>
